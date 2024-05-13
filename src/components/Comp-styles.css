@@ -1,0 +1,13 @@
+.goal-box{
+    background-image: linear-gradient(to right, #FFC300 30%,#ea5a0c7e 60%, #ea5a0c00 100%);
+    padding: 10px 30% 10px 20px;
+    border-radius: 10px;
+    margin: 10px;
+    color: #FFF;
+    font-family: "Manrope", sans-serif;
+}
+
+.goal-box h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
