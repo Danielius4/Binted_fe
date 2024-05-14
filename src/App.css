@@ -1,5 +1,17 @@
-
 body {
-  display: border-box;
-  font-family: "Manrope", sans-serif;
+	display: border-box;
+	font-family: "Manrope", sans-serif !important;
+	background-color: #f1f5f9 !important;
+}
+
+@media (min-width: 992px) {
+	.main {
+		margin: 50px 20%;
+	}
+}
+
+@media (max-width: 991px) {
+	.main {
+		margin: 20px 5%;
+	}
 }
