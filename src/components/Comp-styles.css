@@ -2,14 +2,14 @@
 
 .goal-box {
 	background-image: linear-gradient(to right, #ffc300 30%, #ea5a0c7e 60%, #ea5a0c00 100%);
-	padding: 10px 30% 10px 20px;
+	padding: 15px 30% 10px 20px;
 	border-radius: 10px;
-	margin: 10px;
+	margin: 10px 0;
 	color: #fff;
 }
 
 .goal-box h2 {
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 	font-weight: 700;
 }
 
@@ -48,4 +48,14 @@ li.nav-item a img {
 
 li.nav-item a {
 	color: white;
+}
+
+
+/* EXERCISE PAGE */
+
+
+.main h1{
+    color: #475569;
+    font-weight: 700;
+    font-size: 1.8rem;
 }
