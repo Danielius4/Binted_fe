@@ -52,24 +52,24 @@ li.nav-item a {
 
 /* EXERCISE PAGE */
 
-.main h1{
-    color: #475569;
-    font-weight: 700;
-    font-size: 1.8rem;
-  
-  /* BUTTON COMPONENT */
-
-.binted-button{
-    height: 24px;
-    border-radius: 30px;
-    border: 0;
-    padding: 4px 8px 4px 8px;
-    background-color: #FFF7ED;
-    font-size: 16px;
-    line-height: 16px;
-    color: #FFD60A;
+.main h1 {
+	color: #475569;
+	font-weight: 700;
+	font-size: 1.8rem;
 }
-  
-.binted-button:hover{
-    background-color: #fff7a0;
+/* BUTTON COMPONENT */
+
+.binted-button {
+	height: 24px;
+	border-radius: 30px;
+	border: 0;
+	padding: 4px 8px 4px 8px;
+	background-color: #fff7ed;
+	font-size: 16px;
+	line-height: 16px;
+	color: #ffd60a;
+}
+
+.binted-button:hover {
+	background-color: #fff7a0;
 }
