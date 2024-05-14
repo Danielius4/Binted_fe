@@ -1,19 +1,51 @@
-.goal-box{
-    background-image: linear-gradient(to right, #FFC300 30%,#ea5a0c7e 60%, #ea5a0c00 100%);
-    padding: 10px 30% 10px 20px;
-    border-radius: 10px;
-    margin: 10px;
-    color: #FFF;
-    font-family: "Manrope", sans-serif;
+/* GOAL COMPONENT */
+
+.goal-box {
+	background-image: linear-gradient(to right, #ffc300 30%, #ea5a0c7e 60%, #ea5a0c00 100%);
+	padding: 10px 30% 10px 20px;
+	border-radius: 10px;
+	margin: 10px;
+	color: #fff;
 }
 
-.goal-box h2{
-    font-size: 1.5rem;
-    font-weight: 700;
+.goal-box h2 {
+	font-size: 1.2rem;
+	font-weight: 700;
 }
 
-.text-box{
-    height: 56px;
-    border-radius: 8px!important;
-    padding: 16px!important;
+.text-box {
+	height: 56px;
+	border-radius: 8px !important;
+	padding: 16px !important;
+}
+
+/* HEADER */
+
+@media (min-width: 992px) {
+	li.nav-item a {
+		background-color: #001d3d;
+		border-radius: 5px;
+	}
+}
+
+.navbar {
+	background-color: #000814;
+}
+
+a.navbar-brand {
+	color: #ffd60a !important;
+	font-size: 1rem;
+	font-weight: 900;
+}
+
+li.nav-item a img {
+	width: 20px;
+}
+
+.navbar-brand img {
+	width: 25px;
+}
+
+li.nav-item a {
+	color: white;
 }
