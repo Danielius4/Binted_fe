@@ -50,12 +50,26 @@ li.nav-item a {
 	color: white;
 }
 
-
 /* EXERCISE PAGE */
-
 
 .main h1{
     color: #475569;
     font-weight: 700;
     font-size: 1.8rem;
+  
+  /* BUTTON COMPONENT */
+
+.binted-button{
+    height: 24px;
+    border-radius: 30px;
+    border: 0;
+    padding: 4px 8px 4px 8px;
+    background-color: #FFF7ED;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFD60A;
+}
+  
+.binted-button:hover{
+    background-color: #fff7a0;
 }
