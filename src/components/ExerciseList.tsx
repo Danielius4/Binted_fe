@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import ExerciseListing from "./ExerciseListing";
 
 
 interface Exercise {
-    id: number;
+    id: string;
     name: string;
 }
 
@@ -12,11 +12,13 @@ interface ExerciseListProps {
 
 function ExerciseList(props: ExerciseListProps) {
     return (
-        <div>
+        <div className="exercise-list">
             <h1>My exercises</h1>
-            <ul>
+            <ul className="ps-0">
                 {props.exercises.map((exercise) => (
-                    <li key={exercise.id}><Link to={`/exercise/${exercise.id}`}>Exercise {exercise.name}</Link></li>
+                    <li key={exercise.id}>
+                    <ExerciseListing id={exercise.id} name={exercise.name}/>
+                    </li>
                 ))}
             </ul>
 

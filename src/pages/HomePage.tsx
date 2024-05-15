@@ -11,14 +11,14 @@ function HomePage() {
   //fetch exercises from backend
   const exercises = [
     {
-    id: 1,
+    id: "32j89",
     name: 'Bench Press'
     },
     {
-      id: 2,
+      id: "d3j9",
       name: 'Testing Press'
     }, {
-      id: 3,
+      id: "d9293",
       name: 'Lifting Press'
     },
 ]
