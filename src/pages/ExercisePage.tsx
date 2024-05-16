@@ -14,7 +14,7 @@ function ExercisePage() {
         goal: 'Get a one rep max of 60kg',
         records: [
             {
-                id:1,
+                id:"12edd3",
                 date: '2021-09-01',
                 weight: 50,
                 reps: 5,
@@ -22,7 +22,7 @@ function ExercisePage() {
                 comment: 'This was a good workout'
             },
             {
-                id:2,
+                id: "12edwad3",
                 date: '2021-09-03',
                 weight: 55,
                 reps: 5,
@@ -30,7 +30,7 @@ function ExercisePage() {
                 comment: 'I was able to get a max of 50kg today!'
             },
             {
-                id:3,
+                id: "12awdawd3",
                 date: '2021-09-05',
                 weight: 60,
                 reps: 5,
