@@ -2,6 +2,11 @@ body {
 	display: border-box;
 	font-family: "Manrope", sans-serif !important;
 	background-color: #f1f5f9 !important;
+	
+}
+
+ul {
+	list-style-type: none !important;
 }
 
 @media (min-width: 992px) {

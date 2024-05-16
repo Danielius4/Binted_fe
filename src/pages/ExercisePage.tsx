@@ -1,6 +1,7 @@
 import Goal from "../components/Goal";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
+import LogList from "../components/LogList";
 
 
 function ExercisePage() {
@@ -46,7 +47,7 @@ function ExercisePage() {
             <main className="main">
                     <h1>{mockExercise.name}, ID:{mockExercise.id}</h1>
                     <Goal goal={mockExercise.goal} />
-                    <div className="text-danger">List records here</div>
+                    <LogList logs={mockExercise.records}/>
             </main>
 
         </div>
