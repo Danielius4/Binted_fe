@@ -10,7 +10,7 @@ interface Log {
     comment: string;
 }
 
-interface Exercise {
+export interface Exercise {
     id: string;
     name: string;
     goal: string;
@@ -22,6 +22,9 @@ interface ExerciseListProps {
 }
 
 function ExerciseList(props: ExerciseListProps) {
+
+    console.log(props.exercises);
+
     return (
         <div className="exercise-list">
             <h1 className="mb-4">My exercises</h1>
