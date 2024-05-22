@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Goal from "../components/Goal";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
@@ -19,7 +20,7 @@ function ExercisePage() {
             setLoading(true)
             const response = await fetch('http://localhost:8080/exercise?id=' + params.exerciseId)
             let res = await response.json()
-            res.id= params.exerciseId
+            res.id= params.exerciseId || 0
             setExercise(res);
             setLoading(false)
         }
@@ -35,7 +36,7 @@ function ExercisePage() {
                     <h1>{exercise.name}, ID:{exercise.id}</h1>
                     <Goal goal={exercise.goal} />
                     <LogList logs={exercise.records}/>
-                    <NewLogForm/>
+                    <NewLogForm exerciseId={parseInt(exercise.id) || 0}/>
             </main>}
 
         </div>

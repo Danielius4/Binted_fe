@@ -4,19 +4,41 @@ import Button from './Button';
 
 interface NewLogFormProps {
     createForm?: any;
+    exerciseId: number;
+    fetchExercises?: () => void;
 }
 
 function NewLogForm(props: NewLogFormProps) {
 
-    const submitForm = (e: React.FormEvent) => {
+    const submitForm = async (e: React.FormEvent) => {
         e.preventDefault();
 
         const formData = new FormData(e.target as HTMLFormElement);
         const payload = Object.fromEntries(formData.entries());
-        console.log(payload)
-        // Send the payload to the Backend
-        props.createForm?.();
-        (e.target as HTMLFormElement).reset();
+
+        const exerciseId = props.exerciseId; // Replace this with the actual logic to get the exerciseId
+
+        payload.exerciseId = exerciseId.toString();
+
+        try {
+            const response = await fetch('http://localhost:8080/record', { // Replace with your actual endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            });
+
+            if (response.ok) {
+                console.log('Form submitted successfully');
+                props.createForm?.();
+                (e.target as HTMLFormElement).reset();
+            } else {
+                console.error('Form submission failed', response.statusText);
+            }
+        } catch (error) {
+            console.error('Form submission error', error);
+        }
     };
 
     const today = new Date().toISOString().split('T')[0];
