@@ -11,13 +11,14 @@ function HomePage() {
 
   const [exercises, setExercises] = useState<Exercise[]>([])
   const [loading, setLoading] = useState(true)
+  const [newExerciseId, setNewExerciseId] = useState<Number>()
 
 
   useEffect(() => {
    
     fetchExercises() 
 
-  }, [])
+  }, [newExerciseId])
 
   const fetchExercises = async () => {
     setLoading(true)
@@ -35,7 +36,7 @@ function HomePage() {
       <Header />
       <main className='main'>
         <ExerciseList exercises={exercises} fetchExercises={fetchExercises} />
-        <ExerciseCreateForm />
+        <ExerciseCreateForm setNewExerciseId={setNewExerciseId}/>
       </main>
     </div>
   );

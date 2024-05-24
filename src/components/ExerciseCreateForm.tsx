@@ -3,7 +3,11 @@ import Button from "./Button";
 import TextField from "./TextField";
 import { useState } from "react";
 
-export default function ExerciseCreateForm() {
+interface Props {
+  setNewExerciseId: Function;
+}
+
+export default function ExerciseCreateForm(props: Props) {
   const [name, setName] = useState('');
   const [goal, setGoal] = useState('');
 
@@ -32,7 +36,9 @@ export default function ExerciseCreateForm() {
       if (!response.ok) {
         throw new Error('Server error');
       }
-      
+      const responseBody = await response.json();
+      console.log(responseBody);
+      props.setNewExerciseId(responseBody.id);
       (e.target).reset();
     } catch (error) {
       console.error('Error submitting form:', error);
