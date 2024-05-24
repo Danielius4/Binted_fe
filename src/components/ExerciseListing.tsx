@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 interface ExerciseListProps {
     id: string;
     name: string;
+    fetchExercises?: () => void;
 }
 
 function ExerciseListing(props: ExerciseListProps) {
@@ -41,7 +42,7 @@ function ExerciseListing(props: ExerciseListProps) {
             <div id="toggle">
                 {show && (
                     <div className={animationClass}>
-                        <NewLogForm createForm={() => createRecord(props.id)} />
+                        <NewLogForm exerciseId={parseInt(props.id)} createForm={() => createRecord(props.id)} fetchExercises={props.fetchExercises}/>
                     </div>
                 )}
             </div>
