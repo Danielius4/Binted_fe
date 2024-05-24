@@ -32,9 +32,7 @@ export default function ExerciseCreateForm() {
       if (!response.ok) {
         throw new Error('Server error');
       }
-
-      const result = await response.json();
-      console.log('Form submitted successfully:', result);
+      
       (e.target).reset();
     } catch (error) {
       console.error('Error submitting form:', error);
