@@ -3,6 +3,7 @@ import './../App.css';
 import TextField from '../components/TextField';
 import Header from '../components/Header';
 import ExerciseList from '../components/ExerciseList';
+import ExerciseCreateForm from '../components/ExerciseCreateForm';
 
 
 function HomePage() {
@@ -77,7 +78,7 @@ function HomePage() {
       <Header />
       <main className='main'>
         <ExerciseList exercises={mockExercises} />
-        <TextField placeholder='hello' onChange={setTextFieldValue} value={textFieldValue} type={'text'} />
+        <ExerciseCreateForm />
       </main>
     </div>
   );
