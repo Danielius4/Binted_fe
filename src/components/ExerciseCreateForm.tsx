@@ -25,7 +25,7 @@ export default function ExerciseCreateForm(props: Props) {
     };
 
     try {
-      const response = await fetch('http://localhost:8081/exercise', {
+      const response = await fetch('http://localhost:8080/exercise', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

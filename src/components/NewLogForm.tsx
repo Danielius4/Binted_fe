@@ -5,7 +5,7 @@ import Button from './Button';
 interface NewLogFormProps {
     createForm?: any;
     exerciseId: number;
-    fetchExercises?: () => void;
+    fetchExercises?: Function;
 }
 
 function NewLogForm(props: NewLogFormProps) {

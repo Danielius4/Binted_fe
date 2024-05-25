@@ -19,7 +19,7 @@ export interface Exercise {
 
 interface ExerciseListProps {
     exercises: Exercise[];
-    fetchExercises: () => void;
+    fetchExercises: Function;
 }
 
 function ExerciseList(props: ExerciseListProps) {
@@ -32,7 +32,7 @@ function ExerciseList(props: ExerciseListProps) {
             <ul className="ps-0">
                 {props.exercises.map((exercise) => (
                     <li key={exercise.id}>
-                    <ExerciseListing id={exercise.id} name={exercise.name} fetchExercises={props.fetchExercises}/>
+                    <ExerciseListing id={exercise.id} name={exercise.name} goal={exercise.goal} fetchExercises={props.fetchExercises}/>
                     <LogList logs={exercise.records} />
                     </li>
                 ))}

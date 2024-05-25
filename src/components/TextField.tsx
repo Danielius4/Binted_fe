@@ -6,6 +6,7 @@ interface Props {
   placeholder?: string;
   value: string;
   onChange: Function;
+  style?: any;
 }
 
 export default function TextField(props: Props) {
@@ -17,6 +18,7 @@ export default function TextField(props: Props) {
       value={props.value}
       name={props.name}
       onChange={(e) => props.onChange(e.target.value)}
+      style={props.style}
     ></input>
   );
 }
