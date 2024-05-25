@@ -3,6 +3,7 @@ import './../App.css';
 import TextField from '../components/TextField';
 import Header from '../components/Header';
 import ExerciseList, { Exercise } from '../components/ExerciseList';
+import ExerciseCreateForm from '../components/ExerciseCreateForm';
 
 
 function HomePage() {
@@ -10,31 +11,32 @@ function HomePage() {
 
   const [exercises, setExercises] = useState<Exercise[]>([])
   const [loading, setLoading] = useState(true)
+  const [newExerciseId, setNewExerciseId] = useState<Number>()
 
 
   useEffect(() => {
    
     fetchExercises() 
 
-  }, [])
+  }, [newExerciseId])
 
   const fetchExercises = async () => {
     setLoading(true)
-    const response = await fetch('http://localhost:8080/exercises')
+    const response = await fetch('http://localhost:8081/exercises')
     // mockExercises = await JSON.parse(response)
     setExercises(await response.json());
     setLoading(false)
   }
-
-
-  const [textFieldValue, setTextFieldValue] = useState<string>("sa")
+  if (loading) {
+    return <>Loading...</>
+  }
 
   return ( 
     <div className="App">
       <Header />
       <main className='main'>
         <ExerciseList exercises={exercises} fetchExercises={fetchExercises} />
-        { !loading && <TextField placeholder='hello' onChange={setTextFieldValue} value={textFieldValue} type={'text'} />}
+        <ExerciseCreateForm setNewExerciseId={setNewExerciseId}/>
       </main>
     </div>
   );

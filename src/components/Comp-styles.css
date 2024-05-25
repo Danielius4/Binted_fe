@@ -111,6 +111,28 @@ li.nav-item a {
 	margin: 10px 20px 10px 0;
 }
 
+/* NEW EXERCISE FORM*/
+
+.exercise-form {
+	display: flex;
+	align-items: center;
+	gap: 34px;
+	border-radius: 8px;
+	padding: 16px;
+	background-color: #FFFFFF;
+}
+.exercise-form-text-fields {
+	display: flex;
+	flex-grow: 1;
+}
+.exercice-form-first-text-field {
+	min-width: 30%;
+}
+.exercice-form-second-text-field {
+	display: flex;
+	flex-grow: 2;
+}
+
 /* LOG LISTING */
 
 .log-listing-box {
