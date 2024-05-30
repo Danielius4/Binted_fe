@@ -4,6 +4,7 @@ import TextField from '../components/TextField';
 import Header from '../components/Header';
 import ExerciseList, { Exercise } from '../components/ExerciseList';
 import ExerciseCreateForm from '../components/ExerciseCreateForm';
+import { Box, CircularProgress } from '@mui/material';
 
 function HomePage() {
 
@@ -29,7 +30,9 @@ function HomePage() {
     setLoading(false)
   }
   if (loading) {
-    return <>Loading...</>
+    return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <CircularProgress />
+    </Box>
   }
 
   return ( 

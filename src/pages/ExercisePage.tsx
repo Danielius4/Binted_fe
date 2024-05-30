@@ -6,6 +6,7 @@ import LogList from "../components/LogList";
 import NewLogForm from "../components/NewLogForm";
 import { useEffect, useState } from "react";
 import { Exercise } from "../components/ExerciseList";
+import { Box, CircularProgress } from "@mui/material";
 
 
 function ExercisePage() {
@@ -28,11 +29,17 @@ function ExercisePage() {
 
     }, [])
 
+        if (loading) {
+            return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <CircularProgress />
+            </Box>
+        }
+
 
         return(
         <div>
             <Header />
-            { !loading && exercise && <main className="main">
+            { exercise && <main className="main">
                     <h1>{exercise.name}, ID:{exercise.id}</h1>
                     <Goal goal={exercise.goal} />
                     <LogList logs={exercise.records}/>

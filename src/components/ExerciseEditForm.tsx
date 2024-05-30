@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import Button from './Button';
 import TextField from './TextField'; // Add this line
 import { Console } from 'console';
+import { Box, CircularProgress } from '@mui/material';
 
 interface ExerciseEditFormProps {
         exerciseId: number;
@@ -53,8 +54,10 @@ function ExerciseEditForm({ exerciseId, toggleEditForm, nameProp, goalProp, fetc
         }
     };
 
-    if (loading) {
-        return <>Loading...</>
+    if (!loading) {
+        return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <CircularProgress />
+        </Box>
       }
 
     return (
