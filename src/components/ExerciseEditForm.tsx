@@ -54,7 +54,7 @@ function ExerciseEditForm({ exerciseId, toggleEditForm, nameProp, goalProp, fetc
         }
     };
 
-    if (!loading) {
+    if (loading) {
         return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <CircularProgress />
         </Box>
