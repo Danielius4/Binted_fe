@@ -11,6 +11,7 @@ function HomePage() {
   const [exercises, setExercises] = useState<Exercise[]>([])
   const [loading, setLoading] = useState(true)
   const [newExerciseId, setNewExerciseId] = useState<Number>()
+  const [deletedExerciseId, setDeletedExerciseId] = useState<Number>()
   const [page, setPage] = useState(1)
   const [pageNumber, setPageNumber] = useState(0)
 
@@ -18,7 +19,7 @@ function HomePage() {
    
     fetchExercises() 
 
-  }, [newExerciseId])
+  }, [newExerciseId, deletedExerciseId])
 
   const fetchExercises = async (pageNumber?:number) => {
     setLoading(true)
@@ -29,6 +30,24 @@ function HomePage() {
     setExercises(data["content"])
     setLoading(false)
   }
+
+async function deleteExercise(id: string): Promise<void> {
+  const url = `http://localhost:8080/exercise?id=${id}`;
+  
+  try {
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  } catch (error) {
+    console.error('Failed to delete exercise:', error);
+  }
+  setDeletedExerciseId(Number(id));
+}
+
+
   if (loading) {
     return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <CircularProgress />
@@ -39,7 +58,7 @@ function HomePage() {
     <div className="App">
       <Header />
       <main className='main'>
-        <ExerciseList exercises={exercises} page={page} pageNumber={pageNumber} fetchExercises={fetchExercises} />
+        <ExerciseList exercises={exercises} page={page} pageNumber={pageNumber} fetchExercises={fetchExercises} deleteExercises={deleteExercise}/>
         <ExerciseCreateForm setNewExerciseId={setNewExerciseId}/>
       </main>
     </div>

@@ -23,10 +23,10 @@ interface ExerciseListProps {
   fetchExercises: Function;
   page: number;
   pageNumber: number;
+  deleteExercises: Function;
 }
 
 function ExerciseList(props: ExerciseListProps) {
-  console.log(props.exercises);
 
   return (
     <>
@@ -40,6 +40,7 @@ function ExerciseList(props: ExerciseListProps) {
                 name={exercise.name}
                 goal={exercise.goal}
                 fetchExercises={props.fetchExercises}
+                deleteExercise={props.deleteExercises}
               />
               <LogList logs={exercise.records} />
             </li>

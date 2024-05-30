@@ -9,6 +9,7 @@ interface ExerciseListProps {
   name: string;
   goal: string;
   fetchExercises: Function;
+  deleteExercise: Function;
 }
 
 function ExerciseListing(props: ExerciseListProps) {
@@ -59,8 +60,8 @@ function ExerciseListing(props: ExerciseListProps) {
               textColor="#FFD60A"
               onClick={() => createRecord(props.id)}
             />
-            <Button className="" text="Edit" onClick={toggleEditForm} />{" "}
-            {/* New Edit button */}
+            <Button className="" text="Edit" onClick={toggleEditForm} />
+            <Button className="" text="Delete" onClick={() => props.deleteExercise(props.id)} />
           </div>
           <div id="toggle">
             {show && (
