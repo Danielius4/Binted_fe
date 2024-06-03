@@ -69,7 +69,7 @@ function ExerciseListing(props: ExerciseListProps) {
                 <NewLogForm
                   exerciseId={parseInt(props.id)}
                   createForm={() => createRecord(props.id)}
-                  fetchExercises={props.fetchExercises}
+                  fetchNewLogs={props.fetchExercises}
                 />
               </div>
             )}

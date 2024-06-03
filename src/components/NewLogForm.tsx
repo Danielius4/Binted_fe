@@ -5,7 +5,7 @@ import Button from './Button';
 interface NewLogFormProps {
     createForm?: any;
     exerciseId: number;
-    fetchExercises?: Function;
+    fetchNewLogs: Function;
 }
 
 function NewLogForm(props: NewLogFormProps) {
@@ -33,6 +33,7 @@ function NewLogForm(props: NewLogFormProps) {
                 console.log('Form submitted successfully');
                 props.createForm?.();
                 (e.target as HTMLFormElement).reset();
+                props.fetchNewLogs();
             } else {
                 console.error('Form submission failed', response.statusText);
             }
